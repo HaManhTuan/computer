@@ -39,6 +39,8 @@
         gtag('js', new Date());
         gtag('config', 'UA-119386393-1');
     </script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
 </head>
 <body>
     @include('layout.admin.header')
@@ -58,6 +60,7 @@
     <script src="./admin/vendors/scripts/process.js"></script>
     <script src="./admin/vendors/scripts/layout-settings.js"></script>
     <script src="./admin/vendors/scripts/dashboard.js"></script>
+
 
 </body>
 </html>

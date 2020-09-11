@@ -228,11 +228,11 @@
         </li>
         <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-                <span class="micon dw dw-library"></span><span class="mtext">Tables</span>
+                <span class="micon dw dw-library"></span><span class="mtext">Ảnh</span>
             </a>
             <ul class="submenu">
-                <li><a href="basic-table.html">Basic Tables</a></li>
-                <li><a href="datatable.html">DataTables</a></li>
+                <li><a href="{{ url('admin/media/add-media') }}">Thêm ảnh</a></li>
+                <li><a href="{{ url('admin/media/view-media') }}">Danh sách</a></li>
             </ul>
         </li>
         <li>
