@@ -3,63 +3,8 @@
         <div class="banner_scroll scroll_right" style="display: none"></div>
         <ul class="ul">
           <li id="support_top">
-            <i class="social-icon icon-fb fa fa-skype" aria-hidden="true"></i><a href="#">Tư vấn bán hàng</a>&nbsp;<i
+            <i class="social-icon icon-fb fa fa-skype" aria-hidden="true"></i><a href="#"><b>Thời gian làm việc: </b> Tất cả các ngày trong tuần kể cả ngày lễ, Từ 8h30 - 20h30</a>&nbsp;<i
               class="bg icon_drop"></i>
-            <div id="h_menu_sub_on1" class="h_menu_sub hOnline">
-              <div class="hOnline-order">
-                <div class="online-footer"> <b>Thời gian làm việc: </b> Tất cả các ngày trong tuần kể cả ngày lễ, Từ 8h30 - 20h30  </div>
-                <div style="padding:5px 10px;">
-                  <div class="online-left">
-                    <div class="online-title"> Bán hàng online </div>
-                    <div class="online-content">
-                      <div class="cssLeft"> 
-                        <a href="skype:"> <img src="/template/default/images/icon-skype.jpg" /></a>
-                        <span class="name">Mr Huấn</span>
-                      </div>
-                      <div class="cssRight"> <i class="fa fa-phone"></i> 0989.360.308<br/>
-                        <i class="fa fa-envelope"></i> mac@minhancomputer.com <br/>
-                      </div>
-                      <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="online-left">
-                    <!-- bat dau gamenet-->
-                    <div class="online-title"> Bán hàng online</div>
-                    <div class="online-content">
-                      <div class="cssLeft"> 
-                        <a href="skype:"> <img src="/template/default/images/icon-skype.jpg" /></a>
-                        <span class="name">Mr Diệm</span>
-                      </div>
-                      <div class="cssRight"> <i class="fa fa-phone"></i> 093.218.1111 <br/>
-                        <i class="fa fa-envelope"></i> mac@minhancomputer.com <br/>
-                      </div>
-                      <div class="clear"></div>
-                    </div>
-                  </div>
-                  <!--//-->
-                  <div class="online-right">
-                    <div class="online-title"> Tổng đài hỗ trợ </div>
-                    <div class="online-content">
-                      <div class="cssLeft">
-                        <a href="skype:"> <img src="/template/default/images/icon-skype.jpg" /></a>
-                        <span class="name">Mr Diệm</span>
-                        <br>
-                      </div>
-                      <div class="cssRight"> <i class="fa fa-phone"></i>1800 6321<br>
-                        <i class="fa fa-envelope"></i> mac@minhancomputer.com <br>
-                      </div>
-                      <div class="clear"></div>
-                    </div>
-                    <div class="clear"></div>
-                  </div>
-                  <!--//-->
-                  <div class="clear"></div>
-                  <div class="online-footer"> Để đóng góp ý kiến, khiếu nại, thắc mắc về sản phẩm và dịch vụ, quý khách vui lòng Click <a href="/lien-he" class="txt_u">Gửi ý kiến </a> Hoặc gọi số hotline: 1800 6521 </div>
-                </div>
-                <!--hOnline-order-->
-              </div>
-              <!--h_menu_sub-->
           </li>
           <li id="list_hot_news_top">
           <i class="social-icon icon-news fa fa-newspaper-o" aria-hidden="true"></i><a href="/tin-tuc">Tin
@@ -86,7 +31,7 @@
         <div id="header">
           <div class="container">
             <a href="/" id="logo">
-            <img src="./frontend/images/logo_minhancomputer.png" alt="" />
+            <img src="{{ asset('uploads/images/config/'.$dataConfig->logo) }}" alt="" />
             </a>
             <div id="search">
               <form method="get" action="/tim" enctype="multipart/form-data">
@@ -101,12 +46,20 @@
                 <a href="tel:0852346111">
                 <i class="icon-hotline"></i>
                 <span>Tổng đài miễn phí</span>
-                <span><b class="hotline-number">1800 6321</b></span>
+                <span><b class="hotline-number">{{ $dataConfig->phone }}</b></span>
                 </a>
               </div>
             </div>
             <div id="cart" class="cart-header">
-              <a href="/cart" rel="nofollow"><i class="cart-icon fa fa-shopping-cart" aria-hidden="true"></i> Giỏ hàng <span id="count_shopping_cart_store">0</span></a>
+              <div class="btn-cart" id="cart-block">
+                <a title="My cart" href="{{ url('/gio-hang') }}">Giỏ hàng</a>
+                @if (isset($count_cart) && $count_cart != "")
+                  <span class="notify notify-right">{{ $count_cart }}</span>
+                @else
+                  <span class="notify notify-right">0</span>
+                @endif
+                
+              </div>
             </div>
           </div>
         </div>

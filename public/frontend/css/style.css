@@ -14,6 +14,43 @@ body {
     background: #fff;
     overflow-x: hidden;
 }
+.btn-cart {
+    background: url(../images/icon-cart-round.png) no-repeat center center;
+    position: relative;
+}
+.btn-cart{
+    width: 39px;
+    height: 39px;
+    float: right;
+    position: relative;
+    margin-right: 16px;
+}
+.btn-cart>a {
+    width: 100%;
+    height: 100%;
+    float: left;
+    font-size: 0 !important;
+}
+.btn-cart .notify-right {
+    top: -12px;
+    right: -12px;
+}
+span.notify-right {
+    background: url(../images/notify-right.png) no-repeat;
+    right: 0px;
+    top: -7px;
+}
+span.notify {
+    width: 32px;
+    height: 22px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    line-height: normal;
+    font-size: 11px;
+    padding-top: 3px;
+    z-index: 1;
+}
 .banner a{
   margin-top: 10px;
 }
@@ -166,8 +203,8 @@ a {
 }
 #header #cart {
   float: right;
-  border: 1px solid #8c0408;
-  border-radius: 5px;
+  /*border: 1px solid #8c0408;
+  border-radius: 5px;*/
   line-height: 35px;
   padding: 0 20px 0 15px;
   position: relative;
@@ -249,7 +286,7 @@ a {
   position: absolute;
   background: #ffffff;
   width: 210px;
-  top: 50px;
+  top: 40px;
   left: 0;
   /*height: 480px;*/
   z-index: 100;
@@ -541,13 +578,16 @@ section#special-box-home {
     background: #f7f7f7;
 }
 .item .p_old_price {
-    text-decoration: line-through;
-    display: block;
-    color: #333;
-    float: right;
-    margin-top: 5px;
-    font-size: 14px;
-    text-shadow: none;
+  text-decoration: line-through;
+  display: block;
+  color: #333;
+  float: right;
+  margin-top: 5px;
+  font-size: 14px;
+  text-shadow: none;
+  position: absolute;
+  left: -106px;
+  top: 0px;
 }
 .product_list .item {
     border-right: 1px solid #33333357;

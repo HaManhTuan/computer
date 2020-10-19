@@ -31,6 +31,7 @@
     <script src="./admin/notify.js"></script>
     <script src="./admin/dropify.js"></script>
     <script src="./admin/sweetalert2.all.js"></script>
+    <script src="./admin/function.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
     <script>

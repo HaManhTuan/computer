@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use App\Model\Category;
 use App\Model\Media;
 use App\Model\Page;
+use App\Model\Config;
+use Cart;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -46,11 +48,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('*', function ($view) {
+            $cart_data = Cart::getContent();
+            $cart_subtotal = Cart::getSubTotal();
+            $count_cart = $cart_data->count();
             $menu_data = $this->get_menu_data(0, "", 1);
             $media_center = Media::where('position',1)->get();
             $media_right = Media::where('position',2)->get();
             $page = Page::all();
-            $data_send = ['menu_data' => $menu_data,'media_center' => $media_center,'media_right' => $media_right, 'page' => $page];
+            $dataConfig = Config::find(1);
+            $data_send = ['menu_data' => $menu_data,'media_center' => $media_center,'media_right' => $media_right, 'page' => $page,'cart_data' => $cart_data,'count_cart' => $count_cart,'cart_subtotal' => $cart_subtotal, 'dataConfig' => $dataConfig];
             $view->with($data_send);
         });
     }
